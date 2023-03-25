@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<li th:text="|인가코드 = ${code}|">code</li>
+<li th:text="|유효토큰 = ${access_token}|">code</li>
+<li th:text="|사용자정보 = ${userInfo}|">code</li>
+<li th:text="|동의정보 = ${agreementInfo}|">code</li>
+<a href="https://kauth.kakao.com/oauth/logout?client_id=55e0e1b48c4923b45e63c2b80039c1f4&logout_redirect_uri=http://localhost:8080/question/list">로그아웃</a>
+<!-- 'SBB Project2' 서비스에서 로그아웃 하시겠습니까? 페이지 뜨면서 예 누르면 리디렉트 -->
+</body>
+</html>

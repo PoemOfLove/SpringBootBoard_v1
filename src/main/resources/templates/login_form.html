@@ -1,0 +1,27 @@
+<html layout:decorate="~{layout}">
+<div layout:fragment="content" class="container my-3">
+    <form th:action="@{/user/login}" method="post">
+        <div th:if="${param.error}">
+            <div class="alert alert-danger">
+                사용자ID 또는 비밀번호를 확인해 주세요.
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="username" class="form-label">사용자ID</label>
+            <input type="text" name="username" id="username" class="form-control-sm">
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">비밀번호</label>
+            <input type="password" name="password" id="password" class="form-control-sm">
+        </div>
+        <button type="submit" class="btn btn-lg btn-primary">ID 로그인</button>
+
+        <!-- <a href="/oauth2/authorization/kakao" class="btn btn-warning active" role="button">카카오 로그인</a>   -->
+        <a href="https://kauth.kakao.com/oauth/authorize?client_id=55e0e1b48c4923b45e63c2b80039c1f4&redirect_uri=http://localhost:8080/kakao_login&response_type=code" >
+			<img src = "/img/kakao_login_medium_narrow.png">
+        </a> 
+        
+        
+    </form>
+</div>
+</html>
