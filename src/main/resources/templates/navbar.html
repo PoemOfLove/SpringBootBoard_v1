@@ -12,10 +12,20 @@
                 <li class="nav-item">
                     <a class="btn btn-md btn-outline-secondary" sec:authorize="isAnonymous()"  th:href="@{/user/login}">로그인</a>
                     <a class="btn btn-md btn-outline-secondary" sec:authorize="isAuthenticated()" th:href="@{/user/logout}">로그아웃</a>
+                   
+
                 </li>
+                
                 <li class="nav-item">
                     <a class="btn btn-md btn-outline-secondary" th:href="@{/user/signup}">회원가입</a>
                 </li>
+                        <!--어떤 권한이건 상관없이 인증이 되었다면 이 글이 보임-->
+        &nbsp;<div sec:authorize="isAuthenticated()" sec:authentication="name"></div>
+       
+        <div sec:authorize="hasRole('ADMIN')">(관리자계정)님 환영합니다.</div>
+        <div sec:authorize="hasRole('USER')">(일반계정)님 환영합니다.</div>
+ 
+                
             </ul>
         </div>
     </div>
